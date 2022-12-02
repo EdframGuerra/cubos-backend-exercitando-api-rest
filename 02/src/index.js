@@ -2,7 +2,7 @@
 const express = require('express');
 
 // 4º PASSO - IMPORTAR AS ROTAS
-const rotas = require('./rotas')
+const rotas = require('./rotas/rotas')
 
 // 2º PASSO  - INSTANCIAR O express;
 const app = express();
