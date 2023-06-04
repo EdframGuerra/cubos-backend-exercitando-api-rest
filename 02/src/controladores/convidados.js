@@ -1,11 +1,7 @@
-// 1º PASSO - IMPORTAR BANCO DE DADOS 
 let { convidados } = require('../bancoDeDados/dados');
-
-//2º PASSO  - CRIAR A FUNÇAO QUE SERÁ EXECULTADA NA ROTA E APÓS O PASSO 6, IMPLEMENTAR O CÓDIGO DE EXECUÇÃO em rotas
 
 const listarConvidados = (req, res) => {
     const { nome } = req.query;
-    // const convidados = convidados;
 
     if (nome) {
         let resultado = convidados.includes(nome);
@@ -15,13 +11,11 @@ const listarConvidados = (req, res) => {
         }
 
         return res.status(200).json({ "mensagem": "Convidado presente." });
-
     }
     return res.status(200).json(convidados);
 }
 
 const adicionarConvidado = (req, res) => {
-    // const convidados = convidados;
     const { nome } = req.body;
     if (!nome) {
         return res.status(400).json({ "mensagem": "Nome obrigatório" })
@@ -50,7 +44,6 @@ const removerConvidado = (req, res) => {
     return res.status(204).json(convidados);
 }
 
-// 3º PASSO - EXPORTAR A FUNÇÃO/CONTROLADOR
 module.exports = {
     listarConvidados,
     adicionarConvidado,

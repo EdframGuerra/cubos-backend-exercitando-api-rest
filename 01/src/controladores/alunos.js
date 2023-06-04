@@ -1,8 +1,5 @@
-// 1º PASSO - IMPORTAR BANCO DE DADOS 
 let { alunos, identificadorAula } = require('../BancoDeDados/dados');
 const bancoDeDados = require('../BancoDeDados/dados');
-
-//2º PASSO  - CRIAR A FUNÇAO QUE SERÁ EXECULTADA NA ROTA E APÓS O PASSO 6, IMPLEMENTAR O CÓDIGO DE EXECUÇÃO em rotas
 
 const listarAlunos = (req, res) => {
     const alunos = bancoDeDados.alunos
@@ -65,7 +62,6 @@ const excluirAluno = (req, res) => {
     return res.status(200).json(bancoDeDados.alunos);
 }
 
-// 3º PASSO - EXPORTAR A FUNÇÃO/CONTROLADOR
 module.exports = {
     listarAlunos,
     filtrarAluno,
